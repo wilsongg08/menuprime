@@ -1,4 +1,4 @@
-Manual de instalación proyecto TC_GB_48
+**Manual de instalación proyecto MenuPrime**
 
 Prerrequisitos:
 SQL Developer
@@ -20,7 +20,7 @@ Gradle Build Tool
 https://gradle.org/install/
 
 
-Instalación Base de Datos APP_GEST_DOMICILIOS
+**Instalación Base de Datos APP_GEST_DOMICILIOS**
 
 Descargar la carpeta “DB” y descomprimirla.
 Abrir SQL developer y conectarse a la base de datos Oracle, si es primera conexión, asegurarse de estarse conectando a la PDB inicial llamada XEPDB1 (pluggable databases / bases de datos conectables), esto es con el fin de evitar generar el error ORA-65096: nombre de usuario o rol común no válido (https://apunteslti.com/2022/09/07/solucion-al-error-ora-65096-nombre-de-usuario-o-rol-comun-no-valido/)
@@ -31,7 +31,7 @@ Esperar que se termine de ejecutar todo el archivo y listo, el schema está crea
 En caso de querer eliminar todo el schema, es sino abrir el archivo “Rollback_APP_GEST_DOMICILIOS.sql” y ejecutar todos los scripts que allí se hayan. Este archivo se encuentra dentro de la carpeta “rollback”
 
 
-Instalación API
+**Instalación API**
 
 Descargar la carpeta “API” y descomprimirla.
 Desde cualquier IDE abrir la carpeta descomprimida y correr el proyecto.
@@ -41,7 +41,8 @@ En cuanto a la url de conexión con la base de datos, es pertinente verificar en
 
 Para eliminar el proyecto, basta con eliminar la carpeta “API”.
 
-Instalación Front
+**Instalación Front**
+
 Descargar la carpeta “Front” y descomprimirla.
 Abrir el CMD y entrar en la carpeta descomprimida
 Ejecutar el comando npm install
