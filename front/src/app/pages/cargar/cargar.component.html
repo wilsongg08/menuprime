@@ -1,0 +1,23 @@
+
+<div style=" font-size: 35px; display: flex; align-items: center; justify-content: center; margin-top: 30px;">
+    <p>
+        Seleccione archivo CSV Deliveries
+    </p>
+</div>
+
+<div>
+    <p-fileUpload name="file" accept=".csv"  [customUpload]="true" (uploadHandler)="myUploader($event)" (onRemove)="actualizarMensajes()" (onSelect)="actualizarMensajes()" (onClear)="actualizarMensajes()">
+    </p-fileUpload>
+</div>
+
+<div *ngIf="mensajeError" style="display: flex; align-items: center; justify-content: center; margin-top: 30px;">
+    <p-message severity="error" text="Error en el formato. Por favor verificar contenido"></p-message>
+</div>
+
+<div *ngIf="mensajeExito" style="display: flex; align-items: center; justify-content: center; margin-top: 30px;">
+    <p-message severity="success" text="Success. Registros creados exitosamente"></p-message>
+</div>
+
+<div *ngIf="mensajeConexion" style="display: flex; align-items: center; justify-content: center; margin-top: 30px;">
+    <p-message severity="error" text="Error. Por favor intente de nuevo."></p-message>
+</div>

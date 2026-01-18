@@ -1,0 +1,74 @@
+<div class="row">
+    <div style="display: grid; grid-template-columns: 1fr 1fr;">
+        <div style="display: grid;">
+            <p style=" font-size: 35px;">
+                Empresa
+            </p>
+
+            <p-dropdown (onChange)="actualizarCamposPrevios()" [options]="companies" [(ngModel)]="selectedCompany" placeholder="Selecciona una empresa" 
+                optionLabel="business_name" [showClear]="true">        
+            </p-dropdown>
+        </div>
+        
+    
+        <div style="display: grid;">
+            <p style=" font-size: 35px;">
+                Sede MenuPrime
+            </p>
+        
+            <p-dropdown (onChange)="actualizarCamposPrevios()" [options]="sedes" [(ngModel)]="selectedSede" placeholder="Selecciona una ubicación" optionLabel="name" [showClear]="true">
+            </p-dropdown>
+        </div>
+    </div>
+    
+    <div style="display: grid; grid-template-columns: 1fr 1fr;">
+        <div style="display: grid;">
+            <p style=" font-size: 35px;">
+                Frecuencia
+            </p>
+
+            <p-dropdown (onChange)="actualizarCamposPrevios()" [options]="frequencies" [(ngModel)]="selectedFrequency" placeholder="Selecciona una frecuencia" 
+                optionLabel="" [showClear]="true">        
+            </p-dropdown>
+        </div>
+
+        <div style="display: grid; ">
+            <div>
+                <p style=" font-size: 35px;">
+                    Campos adicionales
+                </p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr;">
+                <div *ngFor="let campo of camposDisponibles"
+                    class="field-checkbox" style=" font-size: 20px; margin-bottom: 5px;">
+                    <p-checkbox name="camposEstructura" value="campo" [value]="campo"  [(ngModel)]="camposElegidos" [inputId]="campo.available_field_id" ></p-checkbox>
+                    <label [for]="campo.available_field_id">{{campo.column_name | titlecase}}</label>
+                </div>           
+            </div>
+        </div>
+    </div>  
+    <div style="display: flex; align-items: center; justify-content: center; margin-top: 30px;">
+        <p-button label="Submit" icon="pi pi-check" (onClick)="guardarEstructura()">
+        </p-button>
+    </div>
+    
+
+    <div *ngIf="mensajeError" style="display: flex; align-items: center; justify-content: center; margin-top: 30px;">
+        <p-message severity="error" text="Error. Por favor seleccionar una empresa y sede"></p-message>
+    </div>
+
+    <div *ngIf="mensajeExito" style="display: flex; align-items: center; justify-content: center; margin-top: 30px;">
+        <p-message severity="success" text="Success. Preferencias guardadas con éxito"></p-message>
+    </div>
+    
+    <div *ngIf="mensajeConexion" style="display: flex; align-items: center; justify-content: center; margin-top: 30px;">
+        <p-message severity="error" text="Error. Por favor intente de nuevo."></p-message>
+    </div>
+    
+    <!-- <p>{{"camposElegidos  "}} {{camposElegidos | json}}</p>
+    <p>{{"estructuraPrevia "}} {{ estructuraPrevia | json}}</p> -->
+    
+</div>
+
+

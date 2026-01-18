@@ -1,0 +1,7 @@
+:host ::ng-deep .p-element {
+    margin-left: 10%
+}
+
+:host ::ng-deep .p-menubar-start {
+    margin-left: 5%
+}
