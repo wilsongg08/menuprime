@@ -1,0 +1,16 @@
+
+BEGIN
+
+INSERT INTO MENUPRIME_LOCATIONS (NAME, ADDRESS, CITY, DEPARTMENT) VALUES ('Floresta', 'Calle 25 #31 64', 'Medellin', 'Antioquia');
+INSERT INTO MENUPRIME_LOCATIONS (NAME, ADDRESS, CITY, DEPARTMENT) VALUES ('Pitalito', 'Carrera 65d #46 75', 'Bogota', 'Cundinamarca');
+INSERT INTO MENUPRIME_LOCATIONS (NAME, ADDRESS, CITY, DEPARTMENT) VALUES ('Lili', 'Calle 28 #75 83', 'Cali', 'Valle del Cauca');
+INSERT INTO MENUPRIME_LOCATIONS (NAME, ADDRESS, CITY, DEPARTMENT) VALUES ('Quilla', 'Carrera 42c #6 47', 'Barranquilla', 'Atlantico');
+INSERT INTO MENUPRIME_LOCATIONS (NAME, ADDRESS, CITY, DEPARTMENT) VALUES ('Heroica', 'Diagonal 32a #19c 50', 'Cartagena', 'Bolivar');
+
+COMMIT;
+
+EXCEPTION
+   WHEN OTHERS THEN
+      ROLLBACK;
+      raise_application_error(-20000,SQLCODE||'=>'|| SQLERRM ,true);   
+END;
